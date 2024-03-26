@@ -1,0 +1,241 @@
+version: "3"
+
+services:
+  mautrix-telegram:
+    container_name: mautrix-telegram
+    image: dock.mau.dev/mautrix/telegram:latest
+    restart: always
+    volumes:
+    - /mnt/synapse/telegram:/data
+
+    # If you put the service above in the same docker-compose as the homeserver,
+    # ignore the parts below. Otherwise, see below for configuring networking.
+
+    # If synapse is running outside of docker, you'll need to expose the port.
+    # Note that in most cases you should either run everything inside docker
+    # or everything outside docker, rather than mixing docker things with
+    # non-docker things.
+    ports:
+    - "127.0.0.1:29381:29317"
+    # You'll also probably want this so the bridge can reach Synapse directly
+    # using something like `http://host.docker.internal:8008` as the address:
+    #extra_hosts:
+    #- "host.docker.internal:host-gateway"
+
+    # If synapse is in a different network, then add this container to that network.
+    networks:
+      - synapse
+      - default
+
+  mautrix-facebook:
+    container_name: mautrix-facebook
+    image: dock.mau.dev/mautrix/facebook:latest
+    restart: always
+    volumes:
+    - /mnt/synapse/facebook:/data
+
+    # If you put the service above in the same docker-compose as the homeserver,
+    # ignore the parts below. Otherwise, see below for configuring networking.
+
+    # If synapse is running outside of docker, you'll need to expose the port.
+    # Note that in most cases you should either run everything inside docker
+    # or everything outside docker, rather than mixing docker things with
+    # non-docker things.
+    ports:
+    - "127.0.0.1:29382:29319"
+    # You'll also probably want this so the bridge can reach Synapse directly
+    # using something like `http://host.docker.internal:8008` as the address:
+    #extra_hosts:
+    #- "host.docker.internal:host-gateway"
+
+    # If synapse is in a different network, then add this container to that network.
+    networks:
+      - synapse
+      - default
+
+  mautrix-instagram:
+    container_name: mautrix-instagram
+    image: dock.mau.dev/mautrix/instagram:latest
+    restart: always
+    volumes:
+    - /mnt/synapse/instagram:/data
+
+    # If you put the service above in the same docker-compose as the homeserver,
+    # ignore the parts below. Otherwise, see below for configuring networking.
+
+    # If synapse is running outside of docker, you'll need to expose the port.
+    # Note that in most cases you should either run everything inside docker
+    # or everything outside docker, rather than mixing docker things with
+    # non-docker things.
+    ports:
+    - "127.0.0.1:29386:29330"
+    # You'll also probably want this so the bridge can reach Synapse directly
+    # using something like `http://host.docker.internal:8008` as the address:
+    #extra_hosts:
+    #- "host.docker.internal:host-gateway"
+
+    # If synapse is in a different network, then add this container to that network.
+    networks:
+      - synapse
+      - default
+
+  mautrix-whatsapp:
+    container_name: mautrix-whatsapp
+    image: dock.mau.dev/mautrix/whatsapp:latest
+    restart: always
+    volumes:
+    - /mnt/synapse/whatsapp:/data
+
+    # If you put the service above in the same docker-compose as the homeserver,
+    # ignore the parts below. Otherwise, see below for configuring networking.
+
+    # If synapse is running outside of docker, you'll need to expose the port.
+    # Note that in most cases you should either run everything inside docker
+    # or everything outside docker, rather than mixing docker things with
+    # non-docker things.
+    ports:
+    - "127.0.0.1:29380:29318"
+    # You'll also probably want this so the bridge can reach Synapse directly
+    # using something like `http://host.docker.internal:8008` as the address:
+    #extra_hosts:
+    #- "host.docker.internal:host-gateway"
+
+    # If synapse is in a different network, then add this container to that network.
+    networks:
+      - synapse
+      - default
+
+  mautrix-slack:
+    container_name: mautrix-slack
+    image: dock.mau.dev/mautrix/slack:latest
+    restart: always
+    volumes:
+    - /mnt/synapse/slack:/data
+
+    # If you put the service above in the same docker-compose as the homeserver,
+    # ignore the parts below. Otherwise, see below for configuring networking.
+
+    # If synapse is running outside of docker, you'll need to expose the port.
+    # Note that in most cases you should either run everything inside docker
+    # or everything outside docker, rather than mixing docker things with
+    # non-docker things.
+    ports:
+    - "127.0.0.1:29388:29335"
+    # You'll also probably want this so the bridge can reach Synapse directly
+    # using something like `http://host.docker.internal:8008` as the address:
+    #extra_hosts:
+    #- "host.docker.internal:host-gateway"
+
+    # If synapse is in a different network, then add this container to that network.
+    networks:
+      - synapse
+      - default
+
+  mautrix-signal:
+    container_name: mautrix-signal
+    image: dock.mau.dev/mautrix/signal:latest
+    restart: always
+    volumes:
+    - /mnt/synapse/signal:/data
+
+    # If you put the service above in the same docker-compose as the homeserver,
+    # ignore the parts below. Otherwise, see below for configuring networking.
+
+    # If synapse is running outside of docker, you'll need to expose the port.
+    # Note that in most cases you should either run everything inside docker
+    # or everything outside docker, rather than mixing docker things with
+    # non-docker things.
+    ports:
+    - "127.0.0.1:29385:29328"
+    # You'll also probably want this so the bridge can reach Synapse directly
+    # using something like `http://host.docker.internal:8008` as the address:
+    #extra_hosts:
+    #- "host.docker.internal:host-gateway"
+
+    # If synapse is in a different network, then add this container to that network.
+    networks:
+      - synapse
+      - default
+
+  mautrix-googlechat:
+    container_name: mautrix-googlechat
+    image: dock.mau.dev/mautrix/googlechat:latest
+    restart: always
+    volumes:
+    - /mnt/synapse/googlechat:/data
+
+    # If you put the service above in the same docker-compose as the homeserver,
+    # ignore the parts below. Otherwise, see below for configuring networking.
+
+    # If synapse is running outside of docker, you'll need to expose the port.
+    # Note that in most cases you should either run everything inside docker
+    # or everything outside docker, rather than mixing docker things with
+    # non-docker things.
+    ports:
+    - "127.0.0.1:29383:29320"
+    # You'll also probably want this so the bridge can reach Synapse directly
+    # using something like `http://host.docker.internal:8008` as the address:
+    #extra_hosts:
+    #- "host.docker.internal:host-gateway"
+
+    # If synapse is in a different network, then add this container to that network.
+    networks:
+      - synapse
+      - default
+
+  mautrix-discord:
+    container_name: mautrix-discord
+    image: dock.mau.dev/mautrix/discord:latest
+    restart: always
+    volumes:
+    - /mnt/synapse/discord:/data
+
+    # If you put the service above in the same docker-compose as the homeserver,
+    # ignore the parts below. Otherwise, see below for configuring networking.
+
+    # If synapse is running outside of docker, you'll need to expose the port.
+    # Note that in most cases you should either run everything inside docker
+    # or everything outside docker, rather than mixing docker things with
+    # non-docker things.
+    ports:
+    - "127.0.0.1:29387:29334"
+    # You'll also probably want this so the bridge can reach Synapse directly
+    # using something like `http://host.docker.internal:8008` as the address:
+    #extra_hosts:
+    #- "host.docker.internal:host-gateway"
+
+    # If synapse is in a different network, then add this container to that network.
+    networks:
+      - synapse
+      - default
+
+  mautrix-twitter:
+    container_name: mautrix-twitter
+    image: dock.mau.dev/mautrix/twitter:latest
+    restart: always
+    volumes:
+    - /mnt/synapse/twitter:/data
+
+    # If you put the service above in the same docker-compose as the homeserver,
+    # ignore the parts below. Otherwise, see below for configuring networking.
+
+    # If synapse is running outside of docker, you'll need to expose the port.
+    # Note that in most cases you should either run everything inside docker
+    # or everything outside docker, rather than mixing docker things with
+    # non-docker things.
+    ports:
+    - "127.0.0.1:29384:29327"
+    # You'll also probably want this so the bridge can reach Synapse directly
+    # using something like `http://host.docker.internal:8008` as the address:
+    #extra_hosts:
+    #- "host.docker.internal:host-gateway"
+
+    # If synapse is in a different network, then add this container to that network.
+    networks:
+      - synapse
+      - default
+
+networks:
+  default:
+  synapse:
+    external: true
