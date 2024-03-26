@@ -3,7 +3,7 @@
 How to communicate with 9 chat network through a decentralized chat network (Matrix Network)
 
 ## Beeper Cloud and Beeper Mini
-Beeper company provide a cloud service to communicate over 9 chat network through Matrix decentralized chat network, actually it is  matrix bridges that 
+Beeper company provide a cloud service to communicate over 9 centralized chat network through Matrix decentralized chat network, actually it is  matrix bridges that 
 provide this functionality.<br/>
 IF YOU WANT TO USE BEEPER YOU SHOULD go in a WAITLIST ! <br>
 [Beeper](https://beeper.com)<br/>
