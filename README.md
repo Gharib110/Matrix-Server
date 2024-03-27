@@ -24,4 +24,4 @@ Commands you should run on your server to to operate your node properly
 - `` mkdir -p /mnt/synapse `` create a directory for every docker containner like synapse (see the compose files)
 - you should be aware of the required permissions !
 - I use postgresql for synapse and sqlite3 for bridges just for simplicity you can use sqlite3 for synapse too, but if you plan to support many users use PostgreSQL for all servers
-- 
+- `` docker compose run --rm synapse generate ``, `` docker compose run --rm mautrix-whatsapp  ``
