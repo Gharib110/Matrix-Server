@@ -17,7 +17,11 @@ My focus is based on what IRANIAN use daily ! <br/>
 YOU USE THOSE MESSENGERS ON YOUR SERVER SO IT IS JUST PRIVATE TO YOU AND E2EE
 
 ## Clients
-You can use element client on IOS, Android, MacOS, Windows and Linus Distros
+You can use element client on IOS, Android, MacOS, Windows and Linux Distros
 
 ## Commands
-The commands you should run to setup the servers properly
+Commands you should run on your server to to operate your node properly
+- `` mkdir -p /mnt/synapse `` create a directory for every docker containner like synapse (see the compose files)
+- you should be aware of the required permissions !
+- I use postgresql for synapse and sqlite3 for bridges just for simplicity you can use sqlite3 for synapse too, but if you plan to support many users use PostgreSQL for all servers
+- 
