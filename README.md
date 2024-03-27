@@ -20,4 +20,4 @@ YOU USE THOSE MESSENGERS ON YOUR SERVER SO IT IS JUST PRIVATE TO YOU AND E2EE
 You can use element client on IOS, Android, MacOS, Windows and Linus Distros
 
 ## Commands
-The commands you should run to setup the server properly
+The commands you should run to setup the servers properly
